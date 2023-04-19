@@ -3,7 +3,7 @@ Description=CU Parser
 
 [Service]
 Type=simple
-ExecStart=python /etc/inventec_svt_deployment/smallcell/cu_parser.pyc
+ExecStart=python /etc/inventec_svt_deployment_smallcell/cu_parser.pyc
 
 [Install]
 WantedBy=multi-user.target
