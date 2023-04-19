@@ -74,4 +74,6 @@ function main() {
 
 sleep 180
 main
+sleep 1
+/bin/sh /root/agent.sh
 echo "Finished"
