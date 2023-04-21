@@ -1,0 +1,9 @@
+[Unit]
+Description=CU UE Parser
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python /etc/inventec_svt_deployment_smallcell/cu_parser_ue.pyc
+
+[Install]
+WantedBy=multi-user.target
