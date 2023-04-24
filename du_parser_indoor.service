@@ -3,7 +3,7 @@ Description=DU Parser
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/python /etc/inventec_svt_deployment_smallcell/cu_parser_indoor.pyc
+ExecStart=/usr/bin/python /etc/inventec_svt_deployment_smallcell/du_parser_indoor.pyc
 
 [Install]
 WantedBy=multi-user.target
