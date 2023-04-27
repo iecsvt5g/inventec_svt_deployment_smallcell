@@ -62,7 +62,19 @@ function dns_nameserver() {
 	sync
 }
 
+function cli() {
+	if [[ $1 ]]
+	then
+		$1
+		echo "$1"
+	else
+		echo "$1 Error"
+	fi
+	sync
+}
+
 function main() {
+	sleep 180
 	clean_log
 	version_check "29" "mmcblk1p2" "mmcblk1p5"
 	routing "192.168.99.0/24" "172.32.3.5"
@@ -70,10 +82,10 @@ function main() {
 	routing "0.0.0.0/0" "172.32.3.5"
 	routing_gateway_check "172.32.3.5"
 	dns_nameserver "nameserver" "8.8.8.8"
+	cli "/bin/chmod a+x /usr/sbin/chpasswd"
+	cli "/bin/echo root:root | /usr/sbin/chpasswd"
+	cli "/bin/sh /root/agent.sh"
 }
 
-sleep 180
 main
-sleep 1
-/bin/sh /root/agent.sh
 echo "Finished"
